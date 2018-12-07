@@ -1,0 +1,17 @@
+
+// Body
+$body-bg: #f8fafc;
+
+// Typography
+$font-family-sans-serif: "Nunito", sans-serif;
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+
+// Colors
+$mainColor: rgb(0, 102, 255);
+$mainColorDark: darken($mainColor, 40);
+$mainColorSuperDark: darken($mainColor, 45);
+
+$socialMainColor: #4CAF50;
+$socialMainColorDark: darken($socialMainColor, 40);
+$socialMainColorSuperDark: darken($socialMainColor, 45)

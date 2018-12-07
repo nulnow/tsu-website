@@ -1,0 +1,104 @@
+.nav {
+
+    $that: &;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    background-color: white;
+
+    &__top {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding: 10px;
+
+        color: white;
+
+        background-color: $mainColor;
+        &--social {
+            background-color: $socialMainColor;
+        }
+
+        h1 {
+            float: left;
+            
+            a {
+                color: white;
+                text-decoration: none;
+            }
+        }
+
+        .logout-button {
+            float: right;
+
+            padding: 10px;
+            border: 0;
+
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+
+            background-color: rgba(0,0,0,0);
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__bot {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        align-items: center;
+
+        background-color: white;
+
+        @media (max-width: 600px) {
+            flex-flow: column nowrap;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+
+    &__link {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+        width: 20%;
+        padding: 10px;
+
+        color: #212121;
+        font-size: 20px;
+        text-decoration: none;
+
+        &:hover {
+            color: white;
+            background-color: $mainColorDark;
+        }
+
+        &--social {
+            &:hover {
+                background-color: $socialMainColorDark;
+            }
+        }
+
+        @media (max-width: 600px) {
+            width: 100%;
+        }
+    }
+}
+
+.nav--auth {
+    .nav__top {
+        background-color: rgb(0, 102, 255);
+    }
+}

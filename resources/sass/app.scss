@@ -1,0 +1,42 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
+
+// Variables
+@import 'variables';
+
+// Layout
+@import 'layout';
+
+// Vendors
+@import 'vendor/sup-typo';
+
+// Pages
+
+@import 'pages/login';
+
+// Components
+@import 'components/gifs';
+@import 'components/jumbotron';
+@import 'components/items';
+@import 'components/nav';
+@import 'components/user-profile';
+@import 'components/post';
+@import 'components/news';
+@import 'components/toTheSocial';
+@import 'components/toTheAdmin';
+@import 'components/role';
+
+// Snippets
+@import 'snippets';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", "Segoe UI", Arial, Helvetica, sans-serif;
+
+  background-color: #212121;
+}

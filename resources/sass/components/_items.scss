@@ -1,0 +1,44 @@
+.items {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    .item {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+
+        width: 25%;
+        height: 240px;
+
+        color: $mainColor;
+        text-decoration: none;
+        
+        background-color: white;
+
+        i {
+            font-size: 70px;
+        }
+
+        p {
+            color: #212121;
+        }
+
+        &:hover {
+            color: white;
+            background-color: $mainColor;
+
+            p {
+                color: white;
+            }
+        }
+
+        @media (max-width: 800px) {
+            height: 150px;
+        }
+    }
+}

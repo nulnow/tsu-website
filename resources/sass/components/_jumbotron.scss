@@ -1,0 +1,26 @@
+.jumbotron {
+    position: relative;
+
+    height: 400px;
+
+    &__title {
+        position: absolute;
+        top: 20%;
+        right: 0%;
+        
+        width: 60%;
+        padding: 60px;
+
+        color: white;
+        background-color: rgba(0,0,0,0.8);
+
+        h1 {
+            font-size: 40px;
+        }
+
+        @media (max-width: 800px) {
+            top: 10%;
+            width: 100%;
+        }
+    }
+}

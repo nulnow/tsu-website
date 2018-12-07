@@ -1,0 +1,9 @@
+.role {
+    color: #212121;
+
+    &--admin {
+        color: red;
+        text-align: center;
+        font-size: smaller;
+    }
+}
