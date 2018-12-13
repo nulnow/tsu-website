@@ -24,23 +24,34 @@
 
 .row {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: flex-start;
+
+    width: 100%;
+
+    overflow-y: scroll;
+
+    background-color: #fff;
+
+    @media (max-width: 1000px) {
+        flex-flow: column;
+        margin-right: 100px;
+        padding-right: 80px;
+    }
 }
 
 .col4 {
     width: 100%;
     min-width: 250px;
-    max-width: 25%;
+    max-width: 400px;
 
-    // border: 4px solid #212121;
-    &:nth-child(odd) {
-        background-color: rgb(231, 231, 231);
+    padding: 10px;
+
+    @media (max-width: 1000px) {
+        max-width: 100%;
+        max-height: 300px;
+        overflow-y: scroll;
+        padding: 20px;
     }
-}
-
-.maxheigh600 {
-    height: 500px;
-    overflow-y: scroll;
 }

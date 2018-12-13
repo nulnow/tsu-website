@@ -4,43 +4,40 @@
 
 @section('content')
     <div class="container container--800">
-        <div class="user-wall bgcwhite mt10">
-            <form class="create-post-form bgcwhite mt10" action="/posts" method="POST">
+        <div class="user-wall  mt10">
+            <form class="form" action="/posts" method="POST">
                 @csrf
 
-                <div>
-                    <label for="post-title">Введите заголовок поста</label>
-                    <input type="text" name="post-title" id="post-title">
-                    @if($errors->has('post-title'))
-                        <p class="create-post-form__error">{{ $errors->first('post-title') }}</p>
-                    @endif
-                </div>
-                
-                <div>
-                    <label for="post-body">Напишите пост</label>
-                    <textarea name="post-body" id="post-body" cols="30" rows="10"></textarea>
-                    @if($errors->has('post-body'))
-                        <p class="create-post-form__error">{{ $errors->first('post-body') }}</p>
-                    @endif
-                </div>
+                <label for="post-title">Введите заголовок поста</label>
+                <input class="form__text-input" type="text" name="post-title" id="post-title">
+                @if($errors->has('post-title'))
+                    <p class="create-post-form__error">{{ $errors->first('post-title') }}</p>
+                @endif
+            
+                <label for="post-body">Напишите пост</label>
+                <textarea  class="form__text-input" name="post-body" id="post-body" cols="30" rows="4"></textarea>
+                @if($errors->has('post-body'))
+                    <p class="create-post-form__error">{{ $errors->first('post-body') }}</p>
+                @endif
 
-                <input type="submit" value="Создать пост">
+                <input class="button" type="submit" value="Создать пост">
             </form>
-            <h2>Записи:</h2>
+            <h2 class="material">Записи:</h2>
             @foreach($posts as $post)
-                <article class="post">
-                
-                    <div class="post__left">
-                        <img src="https://via.placeholder.com/500" alt="">
-                        <h4 class="post__author-name">{{ $post->user->name }}</h4>
+
+                <article class="record">
+                    <div class="record__left-col">
+                        <img class="record__author-img" src="https://via.placeholder.com/500" alt="">
+                        <h4 class="record__author-name">{{ $post->user->name }}</h4>
                         @foreach($post->user->roles as $role)
-                            <p class="role role--{{$role->name}}">{{ $role->name }}</p>
+                            <p class="record__author-name">{{ $role->name }}</p>
                         @endforeach
+
                     </div>
 
-                    <div class="post__right">
-                        <h1><a class="post__link" href="/posts/{{ $post->id }}">{{ $post->title }}</a></h1>
-                        <p>{{ $post->short() }}</p>
+                    <div class="record__right-col">
+                        <h1 class="record__title"><a class="post__link" href="/posts/{{ $post->id }}">{{ $post->title }}</a></h1>
+                        <p class="record__body">{{ $post->short() }}</p>
                     </div>
 
                 </article>

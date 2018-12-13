@@ -1,0 +1,170 @@
+@mixin material {
+
+    @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Roboto Slab";
+    }
+
+    padding: 20px;
+    border-radius: 4px;
+
+    background-color: white;
+
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.12);
+}
+
+.material {
+    @include material;
+    margin-bottom: 10px;
+}
+
+@mixin record {
+    @include material;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    margin-bottom: 10px;
+
+    font-family: Arial;    
+
+    &__left-col,
+    &__right-col {
+        padding: 5px;
+    }
+
+    &__left-col {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        width: 80px;
+    }
+
+    &__right-col {
+        width: 100%;
+        padding: 0 30px;
+    }
+
+    &__author-img {
+        width: 70px;
+        height: 70px;
+
+        border-radius: 4px;
+
+        background-color: #ECEFF1;
+    }
+
+    &__author-name {
+        max-width: 100%;
+        margin-top: 5px;
+
+        font-size: 12px;
+        word-wrap: break-word;
+    }
+
+    &__author-role {
+        color: #f44336;
+        font-size: 12px;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        font-size: 26px;
+    }
+
+    &__date {
+        margin-top: 5px;
+
+        font-size: 15px;
+    }
+
+    &__body {
+        font-size: 16px;
+        line-height: 180%;
+    }
+
+}
+
+.record {
+    @include record;
+    $record: &;
+    
+    &--small {
+        #{$record} {
+            &__body {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.button {
+
+    $button: &;
+
+    $bgColor: #42A5F5;
+    $dangerBgColor: #ef5350;
+
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+
+    color: white;
+    font-size: 10px;
+
+    background-color: $bgColor;
+
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.12);
+
+    &:focus,
+    &:hover {
+        background-color: darken($bgColor, 10);
+    }
+
+    &--danger {
+        background-color: $dangerBgColor;
+        &:hover {
+            background-color: darken($dangerBgColor, 10);
+        }
+    }
+}
+
+@mixin form {
+    @include material;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+    margin-bottom: 10px;
+
+    &__title {
+        margin-bottom: 10px;
+
+        font-size: 20px;
+        font-weight: 300;
+    }
+
+    &__text-input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #E0E0E0;
+        border-radius: 4px;
+    }
+}
+
+.form {
+    $form: &;
+    @include form;
+}
